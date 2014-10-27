@@ -23,8 +23,8 @@
     <div class="jumbotron">
         <h1>Sudoku Solver</h1>
         <h4>Simple <code>Javascript</code> Sudoku Solver programmed by <a href="http://ph91.de" target="_blank"> <strong>Philipp Schreitmueller</strong></a></h4>
-        <h4>Check out the source at <a href="#"><span
-                    class="glyphicon glyphicon-cloud-download"></span><code>BitBucket</code></a></h4>
+        <h4>Check out the source at <a href="https://github.com/Schreitmueller/JSudoku" target="_blank"><span
+                    class="glyphicon glyphicon-cloud-download"></span><code>GitHub</code></a></h4>
 
         <p></p>
     </div>

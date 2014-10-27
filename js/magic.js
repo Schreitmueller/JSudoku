@@ -224,7 +224,7 @@ $(document).ready(function () {
     });
     $("#clearField").click(function (event) {
         event.preventDefault();
-        $("#startSolve").children().removeClass("glyphicon glyphicon-ok");
+        $("#startSolve").children().removeClass("glyphicon-ok");
         $('input[type="number"]').val("");
         $('input[type="number"]').removeAttr("disabled");
     });
