@@ -75,9 +75,9 @@
             </form>
         </div>
         <div class="col-sm-4">
-            <p class="text-success">
-                <h3>The Sudoku is currently <mark id="isValid">valid</mark>!</h3>
-                <h3>Execution time <mark id="execTime"></mark> ms.</h3>
+            <p>
+                <h3>The sudokus contains <mark  class="text-success" id="isValid">no errors</mark>!</h3>
+                <h3>Execution time <mark id="execTime" class="big"></mark> ms.</h3>
             </p>
             <p>
                 <a href="#" class="btn btn-info btn-lg" id="startSolve"><span class="glyphicon glyphicon-play"></span> Solve it!</a>

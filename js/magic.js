@@ -1,5 +1,6 @@
 /**
  * Created by Philipp on 26.10.2014.
+ * Start of API
  */
 
 var SUDOKU = SUDOKU || {};
@@ -14,8 +15,6 @@ SUDOKU.checkValidity = function (x, y, number, field) {
         if (field[i][x] == number)
             return false;
         // square
-
-
         var quadx = 0;
         var quady = 0;
         var nextPos = y*9+x;// +1;
@@ -25,47 +24,25 @@ SUDOKU.checkValidity = function (x, y, number, field) {
             quadx = 3;
         else
             quadx = 6;
+
         if (nextPos <= 26)
             quady = 0;
         else if (nextPos <= 53)
             quady = 3;
         else
             quady = 6;
-
-
-        //
-
-        var tX = quady + Math.floor(((i + 1) / 3)) % 3;
-        var tY = (i + 1) % 3 + quadx;
-
-        if (field[tX][tY] == number)
+        if (field[quady + Math.floor(((i + 1) / 3)) % 3][(i + 1) % 3 + quadx] == number)
             return false;
     }
     return true;
 
 };
 
-SUDOKU.getValidExample = function () {
-    var field = [9][9];
-    field[0][0] = 1;
-    field[0][1] = 2;
-    field[1][0] = 4;
-    return field;
-};
-
-SUDOKU.getWrongExample = function () {
-    var field = [9][9];
-    field[0][0] = 1;
-    field[0][1] = 1;
-    return field;
-};
 SUDOKU.isEqual = function (s1, s2) {
     for (var i = 0; i < 9; i++)
         for (var j = 0; j < 9; j++)
             if (s1[i][j] != s2[i][j])
                 return false;
-
-
     return true;
 };
 
@@ -90,7 +67,6 @@ SUDOKU.getInput = function () {
         for (var j = 0; j < 9; j++) {
             var t = document.getElementById(i + "|" + j).value;
             field[i][j] = (t != "") ? parseInt(t) : 0;
-
         }
     }
     return field;
@@ -116,8 +92,6 @@ SUDOKU.getNextState = function (field) {
                 isSet = 1;
                 break;
             }
-
-
         }
         if (isSet == 1)
             break;
@@ -190,7 +164,27 @@ SUDOKU.solve = function (field) {
     return null;
 };
 
+var UI = UI || {};
 
+UI.setTime = function(text){
+    $("#execTime").text(text);
+};
+UI.setValid = function(success){
+    if(success){
+        $("#isValid").text("no errors");
+        $("#isValid").addClass("text-success");
+        $("#isValid").removeClass("text-danger");
+    }else{
+        $("#isValid").text("errors");
+        $("#isValid").addClass("text-danger");
+        $("#isValid").removeClass("text-success");
+    }
+};
+
+/*
+* End of API
+* Accessing DOM
+* */
 $(document).ready(function () {
     $("input").change(function (event) {
         event.preventDefault();
