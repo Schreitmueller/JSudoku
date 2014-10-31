@@ -188,6 +188,7 @@ UI.setValid = function(success){
 $(document).ready(function () {
     $("input").change(function (event) {
         event.preventDefault();
+        $(this).addClass("preset");
         var field = SUDOKU.getInput();
         if (SUDOKU.isCurrentlyValid(field)) {
            UI.setValid(true);
@@ -210,6 +211,7 @@ $(document).ready(function () {
     $("#clearField").click(function (event) {
         event.preventDefault();
         $('input[type="number"]').val("");
+        $('input[type="number"]').removeClass("preset");
         UI.setTime("");
         UI.setValid(true);
     });
