@@ -190,15 +190,9 @@ $(document).ready(function () {
         event.preventDefault();
         var field = SUDOKU.getInput();
         if (SUDOKU.isCurrentlyValid(field)) {
-            $("#isValid").text("valid");
-            $("#isValid").parent().parent().addClass("text-success");
-            $("#isValid").parent().parent().removeClass("text-danger")
-
+           UI.setValid(true);
         } else {
-            $("#isValid").html("not valid");
-            $("#isValid").parent().parent().addClass("text-danger");
-            $("#isValid").parent().parent().removeClass("text-danger");
-
+            UI.setValid(false);
         }
 
     });
@@ -208,18 +202,15 @@ $(document).ready(function () {
         var start= Date.now();
         var solution = SUDOKU.solve(field);
         var end= Date.now();
-        $('input[type="number"]').attr("disabled");
-        $("#execTime").text(end-start);
-
+        UI.setTime(end-start);
         if (solution != null) {
             SUDOKU.setInput(solution);
-            $("#startSolve").children().addClass("glyphicon glyphicon-ok");
         }
     });
     $("#clearField").click(function (event) {
         event.preventDefault();
-        $("#startSolve").children().removeClass("glyphicon-ok");
         $('input[type="number"]').val("");
-        $('input[type="number"]').removeAttr("disabled");
+        UI.setTime("");
+        UI.setValid(true);
     });
 });

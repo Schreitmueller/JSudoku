@@ -34,11 +34,11 @@
     <div class="row">
         <div class="col-sm-4">
             <h3><span class="glyphicon glyphicon-paperclip"></span> Rules</h3>
-            <p>Fill in numbers <mark>1</mark> to <mark>9</mark> in the way that there is</p>
+            <p>Fill in numbers <mark>1</mark> to <mark>9</mark> in a way that the same single number</p>
             <ul>
-                <li>not the same number in a line.</li>
-                <li>not the same number in a row.</li>
-                <li>not the same number in a <cod>3x3</cod> sub-square.</li>
+                <li>may not appear twice in a line.</li>
+                <li>may not appear twice in a row.</li>
+                <li>may not appear in any of the 9 <cod>3x3</cod> subregions.</li>
             </ul>
 
         </div>
