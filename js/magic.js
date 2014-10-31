@@ -17,7 +17,7 @@ SUDOKU.checkValidity = function (x, y, number, field) {
         // square
         var quadx = 0;
         var quady = 0;
-        var nextPos = y*9+x;// +1;
+        var nextPos = y * 9 + x;// +1;
         if (nextPos % 9 <= 2)
             quadx = 0;
         else if (nextPos % 9 <= 5)
@@ -112,7 +112,7 @@ SUDOKU.copyState = function (field) {
             ret[i][j] = field[i][j];
 
     return ret;
-}
+};
 SUDOKU.getCount = function (field) {
     var count = 0;
     for (var i = 0; i < 9; i++)
@@ -166,32 +166,33 @@ SUDOKU.solve = function (field) {
 
 var UI = UI || {};
 
-UI.setTime = function(text){
+UI.setTime = function (text) {
     $("#execTime").text(text);
 };
-UI.setValid = function(success){
-    if(success){
-        $("#isValid").text("no errors");
-        $("#isValid").addClass("text-success");
-        $("#isValid").removeClass("text-danger");
-    }else{
-        $("#isValid").text("errors");
-        $("#isValid").addClass("text-danger");
-        $("#isValid").removeClass("text-success");
+UI.setValid = function (success) {
+    var validNode = $("#isValid");
+    if (success) {
+        validNode.text("no errors");
+        validNode.addClass("text-success");
+        validNode.removeClass("text-danger");
+    } else {
+        validNode.text("errors");
+        validNode.addClass("text-danger");
+        validNode.removeClass("text-success");
     }
 };
 
 /*
-* End of API
-* Accessing DOM
-* */
+ * End of API
+ * Accessing DOM
+ * */
 $(document).ready(function () {
     $("input").change(function (event) {
         event.preventDefault();
         $(this).addClass("preset");
         var field = SUDOKU.getInput();
         if (SUDOKU.isCurrentlyValid(field)) {
-           UI.setValid(true);
+            UI.setValid(true);
         } else {
             UI.setValid(false);
         }
@@ -200,18 +201,19 @@ $(document).ready(function () {
     $("#startSolve").click(function (event) {
         event.preventDefault();
         var field = SUDOKU.getInput();
-        var start= Date.now();
+        var start = Date.now();
         var solution = SUDOKU.solve(field);
-        var end= Date.now();
-        UI.setTime(end-start);
+        var end = Date.now();
+        UI.setTime(end - start);
         if (solution != null) {
             SUDOKU.setInput(solution);
         }
     });
     $("#clearField").click(function (event) {
         event.preventDefault();
-        $('input[type="number"]').val("");
-        $('input[type="number"]').removeClass("preset");
+        var inputNode = $('input[type="number"]');
+        inputNode.val("");
+        inputNode.removeClass("preset");
         UI.setTime("");
         UI.setValid(true);
     });

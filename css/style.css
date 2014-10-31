@@ -15,13 +15,15 @@ td {
     padding: 0;
 }
 
-.sudo input{
+.sudo input {
     width: 2em;
 }
-.sudo td{
+
+.sudo td {
     width: 2em;
 }
-.sudo .preset{
-    color:blue;
+
+.sudo .preset {
+    color: blue;
     font-weight: bolder;
 }
