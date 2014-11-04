@@ -37,9 +37,9 @@
             <h3><span class="glyphicon glyphicon-paperclip"></span> Rules</h3>
 
             <p>Fill in numbers
-                <mark>1</mark>
+                <code>1</code>
                 to
-                <mark>9</mark>
+                <code>9</code>
                 in a way that the same single number
             </p>
             <ul>
@@ -83,7 +83,7 @@
         <div class="col-sm-4">
             <p>
 
-            <h3>The sudokus contains
+            <h3>The sudoku contains
                 <mark class="text-success" id="isValid">no errors</mark>
                 !
             </h3>
