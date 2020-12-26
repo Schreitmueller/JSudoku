@@ -1,0 +1,15 @@
+version: '3'
+services:
+  sudoku-frontend:
+    build: .
+    ports:
+      - "9005:80"
+    environment:
+      VIRTUAL_HOST: subdomain.domain.tld
+      LETSENCRYPT_HOST: subdomain.domain.tld
+      LETSENCRYPT_EMAIL: adress@provider.tld
+    networks:
+      - proxy-network
+networks:
+  proxy-network:
+    external: true
