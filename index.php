@@ -91,7 +91,7 @@
                 <mark id="execTime" class="big"></mark>
                 ms.
             </h3>
-
+            </p>                 
             <p>
                 <a href="#" class="btn btn-info btn-lg" id="startSolve"><span class="glyphicon glyphicon-play"></span>
                     Solve it!</a>

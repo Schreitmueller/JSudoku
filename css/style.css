@@ -16,11 +16,12 @@ td {
 }
 
 .sudo input {
-    width: 2em;
+    width: 2.5em;
+    text-align: center;
 }
 
 .sudo td {
-    width: 2em;
+    width: 2.5em;
 }
 
 .sudo .preset {
